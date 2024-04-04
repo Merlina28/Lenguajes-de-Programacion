@@ -1,0 +1,6 @@
+(define (eliminarDato elemento lista)
+  (define (eliminar dato lst)
+    (if (equal? dato (car lst))
+        (cdr lst)
+        (cons (car lst) (eliminar dato (cdr lst)))))
+  (map (lambda (a) (eliminar elemento a)) (list lista)))
